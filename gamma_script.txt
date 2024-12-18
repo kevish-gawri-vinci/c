@@ -1,0 +1,37 @@
+/** PYTHON WORDLIST 0 TO 9999 **/
+
+def generate_wordlist(filename):
+        with open(filename, 'w') as file:
+                for number in range(10000):
+                        file.write(f"{number}\n")
+
+if __name__ == "__main__":
+        output_file = "wordlist.txt"
+        generate_wordlist(output_file)
+
+/** DOWNLOAD ALL ZIP SCRIPT **/
+
+#!/bin/bash
+
+DOWNLOAD_DIR="./downloads"
+EXTRACTED_DIR="./extracted_files"
+
+mkdir -p $DOWNLOAD_DIR
+mkdir -p $EXTRACT_DIR
+
+BASE_URL="http://gamma.rs.io:8080/cpadmin/"
+
+wget -r -l1 -nd -A "*.zip" -P $DOWNLOAD_DIR $BASE_URL
+
+for zip_file in $DOWNLOAD_DIR/*.zip; do
+    echo "Extraction de $zip_file"
+    unzip -q "$zip_file" -d $EXTRACT_DIR
+done
+
+
+/** SHELL SCRIPT PASSWORD BRUTEFORCING **/
+#!/bin/bash
+for zip_file in *.zip; do
+                echo "at $zip_file"
+        fcrackzip -u -D -p ./wordlist.txt "$zip_file"
+done

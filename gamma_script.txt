@@ -1,4 +1,4 @@
-/** PYTHON WORDLIST 0 TO 9999 **/
+/*************************** PYTHON WORDLIST 0 TO 9999 ************************/
 
 def generate_wordlist(filename):
         with open(filename, 'w') as file:
@@ -9,7 +9,7 @@ if __name__ == "__main__":
         output_file = "wordlist.txt"
         generate_wordlist(output_file)
 
-/** DOWNLOAD ALL ZIP SCRIPT **/
+/********************************** DOWNLOAD ALL ZIP SCRIPT ******************************/
 
 #!/bin/bash
 
@@ -29,7 +29,7 @@ for zip_file in $DOWNLOAD_DIR/*.zip; do
 done
 
 
-/** SHELL SCRIPT PASSWORD BRUTEFORCING **/
+/************************************** SHELL SCRIPT PASSWORD BRUTEFORCING ***************************/
 #!/bin/bash
 for zip_file in *.zip; do
                 echo "at $zip_file"
